@@ -12,8 +12,12 @@ Cylon.robot({//调用robot函数，并传入一个大对象来配置
     },
 
     work: function(my) {//驱动函数，
-        every((0.01).second(), function() {//每3秒，闪一下（(3).second()貌似是lodash，我猜的，没用过，嘿嘿）
-            my.led.toggle();//my应该是指向他自己
-        });
+        var brightness  = 0;
+        my.led.turnOn();
+        setInterval(function () {
+            my.led.turnOff();
+            my.led.brightness(brightness+=20 > 255?0:brightness);
+            my.led.turnOn();
+        },100);
     }
 }).start();//配置好了之后就开始工作
