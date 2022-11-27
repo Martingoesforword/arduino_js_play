@@ -18,5 +18,9 @@
     "firmata-io": "^2.3.0"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "<8.14.0"
+  },
+  "engineStrict": false
 }
