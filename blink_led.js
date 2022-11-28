@@ -13,13 +13,16 @@ board.on("ready", function() {
     lcd1.useChar('heart');
     lcd1.useChar('duck');
 
-    let showContent = "1";
+
+    let showContent = " SJH LOVES SRX";
     let index = 0;
 
     setInterval(()=>{
-        lcd1.cursor(1, index++);
-        lcd1.print(showContent);
-    }, 1000);
+        lcd1.cursor(1, index);
+        if(!showContent[index]) return
+        lcd1.print(showContent[index]);
+        index++;
+    }, 100);
 
     this.repl.inject({
         lcd: lcd1,
