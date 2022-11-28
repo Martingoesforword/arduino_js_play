@@ -1,3 +1,5 @@
+// 参考：https://www.youtube.com/watch?v=N0oeC25vuDM
+
 var five = require("johnny-five");
 var board = new five.Board({port:"COM3"});
 
